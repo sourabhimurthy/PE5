@@ -1,4 +1,4 @@
-package com.stackroute.PE5;
+package com.stackroute.unittest.PE5;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -24,7 +24,17 @@ public class CountWordsTest {
     }
 
     @Test
-    public void countOfWords1() {
+    public void countOfWordsEquals() {
         assertEquals(("{gift=1, dress=1, world=1, happy=2, sad=1, hello=2}"),c1.countOfWords("hello hello happy sad dress gift happy world"));
+    }
+
+    @Test
+    public void countOfWordsNotSame() {
+        assertNotSame(("{gift=1, dress=1, world=1, happy=2, sad=1, hello=2}"),c1.countOfWords("hello hello happy sad dress gift happy world gift"));
+    }
+
+    @Test
+    public void countOfWordsNull() {
+        assertNull(null,c1.countOfWords(""));
     }
 }

@@ -1,11 +1,16 @@
-package com.stackroute.PE5;
+package com.stackroute.unittest.PE5;
 import java.util.HashMap;
 import java.util.Map;
 
 public class CountWords {
 
     public static String countOfWords(String s)
-    {   Map<String,Integer>words=new HashMap<String, Integer>();
+    {   if(s.length()==0)
+       {
+        return null;
+       }
+
+        Map<String,Integer>words=new HashMap<String, Integer>();
         String[] array=s.split("[\\s+-@*_,?]");
              for (String token: array) {
             System.out.println(token);
@@ -20,12 +25,5 @@ public class CountWords {
         return words.toString();
     }
 
-    public static void main(String[] args)
-    {
-        Map<String,Integer>words=new HashMap<String, Integer>();
-        CountWords cont=new CountWords();
-        String str="one one-one_two,three,one@three*one?two";
-       String words1=countOfWords(str);
-        System.out.println(words1);
-    }
+
 }

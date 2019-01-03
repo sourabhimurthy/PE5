@@ -1,10 +1,14 @@
-package com.stackroute.PE5;
+package com.stackroute.unittest.PE5;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+
 import java.util.ArrayList;
+import java.util.Arrays;
+
+import static org.junit.Assert.*;
 
 public class UpdateArrayListTest {
     UpdateArrayList u1;
@@ -21,19 +25,14 @@ public class UpdateArrayListTest {
 
     @Test
     public void updateArray() {
-        ArrayList<String> arrayList=new ArrayList<String>();
-        arrayList.add("Apple");
-        arrayList.add("Grape");
-        arrayList.add("Melon");
-        arrayList.add("Berry");
+        ArrayList<String> arrayList=new ArrayList<String>(Arrays.asList(new String[]{"Apple","Grape","Melon","Berry"}));
+         assertEquals(arrayList,u1.updateArray(arrayList,"Kiwi",0));
+    }
 
-
-
-
-
-
-
-
+    @Test
+    public void deleteArray() {
+        ArrayList<String> arrayList=new ArrayList<String>(Arrays.asList(new String[]{"Apple","Grape","Melon","Berry"}));
+        assertEquals(arrayList,u1.deleteArray(arrayList));
     }
 
 

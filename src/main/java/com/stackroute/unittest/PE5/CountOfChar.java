@@ -1,4 +1,4 @@
-package com.stackroute.PE5;
+package com.stackroute.unittest.PE5;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,6 +12,12 @@ public class CountOfChar {
         HashMap<String,Boolean> charCountMap = new HashMap<String, Boolean>();//for result
 
         Map<String, Integer> hm = new HashMap<String, Integer>();
+        if(array.length==0)
+        {
+            return null;
+        }
+        int index=0;
+
 
         for (String i : array) {
             Integer j = hm.get(i);
@@ -35,11 +41,6 @@ public class CountOfChar {
 
     }
 
-    public static void main(String[] args)
-    {
-        String arr[] = {"a","b","c","d","a","c","c"};
-        Map<String,Boolean> charCountMap = new HashMap<String, Boolean>();
-       charCountMap = characterCount(arr);
-        System.out.println(charCountMap);
-    }
+
 }
+

@@ -1,4 +1,4 @@
-package com.stackroute.PE5;
+package com.stackroute.unittest.PE5;
 
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -6,8 +6,13 @@ import java.util.Map;
 
 public class ReplaceValue {
 
-    public LinkedHashMap<String,String > modify(LinkedHashMap<String,String>hashMap)
+    public LinkedHashMap<String,String > modifyValue(LinkedHashMap<String,String>hashMap)
     {
+        if(hashMap.size()==0)
+        {
+            return null;
+        }
+
         Iterator hmIterator = hashMap.entrySet().iterator();
         Map.Entry mapElement = (Map.Entry)hmIterator.next();
         String key1=(String)mapElement.getKey();
@@ -21,6 +26,7 @@ public class ReplaceValue {
         hashMap.put(key1," ");
         hashMap.put(key2,value2);
         }
+
         return hashMap;
     }
 }

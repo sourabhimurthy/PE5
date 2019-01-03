@@ -1,5 +1,7 @@
-package com.stackroute.PE5;
+package com.stackroute.unittest.PE5;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.HashMap;
@@ -9,27 +11,38 @@ import static org.junit.Assert.*;
 
 public class ReplaceValueTest {
     ReplaceValue map;
-    @Test
-    public void modifySuccess() {
+
+    @Before
+    public void setUp() throws Exception {
         map=new ReplaceValue();
+    }
+
+    @After
+    public void tearDown() throws Exception {
+        map=null;
+    }
+
+    @Test
+    public void modifyValueSuccess() {
+
         LinkedHashMap<String ,String> hashMap=new LinkedHashMap<>();
         hashMap.put("val1","java");
         hashMap.put("val2","c++");
         HashMap<String ,String> res=new HashMap<>();
         res.put("val1"," ");
         res.put("val2","java");
-        assertEquals(res,map.modify(hashMap));
+        assertEquals(res,map.modifyValue(hashMap));
     }
     @Test
     public void modifyFailure() {
-        map=new ReplaceValue();
+
         LinkedHashMap<String ,String> hashMap=new LinkedHashMap<>();
         hashMap.put("val1","java");
         hashMap.put("val2","c++");
         HashMap<String ,String> res=new HashMap<>();
         res.put("val1"," ");
         res.put("val2","c++");
-        assertNotSame(res,map.modify(hashMap));
+        assertNotSame(res,map.modifyValue(hashMap));
     }
 
     @Test
@@ -38,8 +51,17 @@ public class ReplaceValueTest {
         LinkedHashMap<String ,String> hashMap=new LinkedHashMap<>();
         hashMap.put("val1","java");
         hashMap.put("val2","c++");
-        assertNotNull("Error",map.modify(hashMap));
+        assertNotNull("Error",map.modifyValue(hashMap));
     }
+
+    @Test
+    public void modifyNUll() {
+
+        LinkedHashMap<String ,String> hashMap=new LinkedHashMap<>();
+        assertNull(null,map.modifyValue(hashMap));
+          }
+
+
 }
 
 

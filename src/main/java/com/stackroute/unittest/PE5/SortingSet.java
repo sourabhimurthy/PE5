@@ -1,4 +1,4 @@
-package com.stackroute.PE5;
+package com.stackroute.unittest.PE5;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +8,10 @@ import java.util.TreeSet;
 public class SortingSet {
 
     public static Set<String> sortedSet(String[] array) {
+        if(array.length==0)
+        {
+            return null;
+        }
         Set<String> treeSet = new TreeSet<>();
         int i = 0;
         while (i != array.length ) {
@@ -19,19 +23,14 @@ public class SortingSet {
 
     }
     public static List<String> convertToList(Set<String> input)
+    {  if(input.size()==0)
     {
+        return null;
+    }
         List list=new ArrayList(input);
         System.out.println(list);
         return list;
     }
 
-    public static void main(String[] args)
-    {
-        String[] array= {"hello","happy","sad","good"};
-        Set<String> s1=new TreeSet<>();
-    List<String> l1=new ArrayList<>();
-        s1=sortedSet(array);
-                l1=convertToList(s1);
-        System.out.println(l1);
-    }
+
 }

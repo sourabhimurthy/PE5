@@ -1,4 +1,4 @@
-package com.stackroute.PE5;
+package com.stackroute.unittest.PE5;
 
 import org.junit.After;
 import org.junit.Before;
@@ -34,16 +34,23 @@ public class CountOfCharTest {
     }
 
     @Test
-    public void characterCount1() {
+    public void characterCountNotSame() {
         String arr[] = {"a","b","c","d","a","c","c","e","f"};
         HashMap<String,Boolean> charCountMap = new HashMap<String, Boolean>();
         charCountMap.put("a",true);
         charCountMap.put("b",false);
-        charCountMap.put("c",true);
+        charCountMap.put("c",false);
         charCountMap.put("d",false);
         charCountMap.put("e",false);
         charCountMap.put("f",false);
 
-        assertEquals(charCountMap,c1.characterCount(arr));
+        assertNotSame(charCountMap,c1.characterCount(arr));
+    }
+
+    @Test
+    public void characterCountNull() {
+        String[] arr={};
+        HashMap<String,Boolean> charCountMap =new HashMap<>();
+        assertNull(null,c1.characterCount(arr));
     }
 }
